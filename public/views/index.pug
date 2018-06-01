@@ -1,0 +1,21 @@
+extends header
+
+block content
+  nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+    a.navbar-brand.center(href='#')
+      img(src='http://icons.iconarchive.com/icons/froyoshark/enkel/512/Bitcoin-icon.png' alt='logo' width='40px')
+    ul.navbar-nav: a.nav-link(href='#') Bitcoin now
+  .container-fluid(onload='chart()')
+    p 
+    p.title Graph Bitcoin
+    p
+      span Bitcoin now: 
+      span= data.bitcoin_now
+      span  USD
+    .graph
+      canvas.myChart(width='500vh' height='200vh')
+  script.
+    xbar="#{data.xbar}"
+    ybar="#{data.ybar}"
+  script
+      include ../js/main.js
